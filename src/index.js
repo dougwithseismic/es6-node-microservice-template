@@ -41,6 +41,10 @@ if (process.env.NODE_ENV === 'production') {
   app.use('/v1/auth', authLimiter)
 }
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 app.use('/v1', routes)
 
 app.listen(port, () => {
